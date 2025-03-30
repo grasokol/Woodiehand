@@ -8,6 +8,45 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Получаем все изображения сертификатов
+  const certificateImgs = document.querySelectorAll('.certificates img');
+  const modal = document.createElement('div');
+  modal.className = 'certificate-modal';
+  
+  modal.innerHTML = `
+    <div class="certificate-modal-content">
+      <span class="close-certificate">&times;</span>
+      <img src="" alt="Увеличенное изображение сертификата">
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  
+  const modalImg = modal.querySelector('img');
+  const closeBtn = modal.querySelector('.close-certificate');
+  
+  // Добавляем обработчики кликов
+  certificateImgs.forEach(img => {
+    img.addEventListener('click', function() {
+      modal.classList.add('active');
+      modalImg.src = this.src;
+    });
+  });
+  
+  // Закрытие модального окна
+  closeBtn.addEventListener('click', function() {
+    modal.classList.remove('active');
+  });
+  
+  // Закрытие при клике вне изображения
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+    }
+  });
+});
+
 // Функция для листания слайдера
 function setupSlider(slider) {
   const content = slider.querySelector('.slider-content');
