@@ -1,0 +1,295 @@
+/* Общие стили */
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  /* color: #2c3e50; */
+}
+
+h3 {
+  font-size: 2em;
+  color: #2c3e50;
+}
+
+h4 {
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #219653;
+}
+
+/* Шапка */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  color: white;
+  font-weight: 700;
+}
+
+/* Герой-секция */
+#hero {
+  background: url('images/главная.avif') no-repeat center center/cover; /* Путь к изображению */
+  color: white; /* Цвет текста */
+  padding: 150px 0; /* Отступы сверху и снизу */
+  text-align: center; /* Выравнивание текста по центру */
+  position: relative; /* Для наложения затемнения (если нужно) */
+}
+
+/* Затемнение фона (опционально) */
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8); /* Чёрный слой с прозрачностью 50% */
+  z-index: 1;
+}
+
+#hero .container {
+  position: relative; /* Чтобы текст был поверх затемнения */
+  z-index: 2;
+}
+
+#hero h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  color: white;
+}
+
+#hero p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+/* О компании */
+#about {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.about-item {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Отзывы */
+#reviews {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.review {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.review p {
+  font-style: italic;
+}
+
+/* Галерея */
+#gallery {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.gallery-group {
+  margin-bottom: 40px;
+}
+
+.gallery-group h3 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.slider-content {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  gap: 20px;
+  width: 100%;
+}
+
+.card {
+  flex: 0 0 calc(33.333% - 20px); /* 2.5 карточки на экране */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 15px;
+  font-size: 1em;
+  color: #333;
+}
+
+.slider-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.5em;
+  position: absolute;
+  z-index: 2;
+  transition: background-color 0.3s;
+}
+
+.slider-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+  left: -30px;
+}
+
+.right-arrow {
+  right: -30px;
+}
+
+/* Услуги */
+#services {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.service {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Контакты */
+#contacts {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contacts-info {
+  text-align: left;
+}
+
+.contacts-form {
+  text-align: center;
+}
+
+.contacts-form input, .contacts-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contacts-form button {
+  width: 103.8%;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+}
+
+.social-links a {
+  color: #27ae60;
+}
+
+/* Футер */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
